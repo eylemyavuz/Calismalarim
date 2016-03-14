@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARACIN :"
+                android:id="@+id/id"
+                android:textColor="#040304"
+                android:textSize="15dp" />
+
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERSONEL TC :"
+                android:id="@+id/a1"
+                android:textColor="#040304"
+                android:textSize="10dp" />
+
+            <EditText android:id="@+id/tc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="100dp"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="PLAKASI  :"
+                android:textSize="10dp"
+                android:id="@+id/a2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plaka"
+                android:layout_marginRight="100dp"
+                />
+
+        </TableRow>
+
+
+
+
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_kaydet"
+            android:text="KAYDET"
+            android:layout_marginRight="1dp"
+            android:layout_gravity="left" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GÜNCELLE"
+            android:id="@+id/btn_güncelle"
+            android:layout_gravity="left" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARA"
+            android:id="@+id/btn_ara"
+            android:layout_marginRight="1dp"
+            android:layout_gravity="left" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SİL"
+            android:id="@+id/btn_sil"
+            android:layout_marginRight="1dp"
+            android:layout_gravity="left" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tw"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

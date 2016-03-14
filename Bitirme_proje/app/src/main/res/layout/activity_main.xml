@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ÖĞRENCİ İŞLEMLERİ"
+        android:id="@+id/veritabani"
+        android:onClick="Tiklandi"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PERSONEL İŞLEMLERİ"
+        android:onClick="Tiklandi1"
+        android:id="@+id/button"
+        android:layout_below="@+id/veritabani"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ARAÇ İŞLEMLERİ"
+        android:onClick="Tiklandi2"
+        android:id="@+id/button1"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:layout_gravity="center" />
+
+</RelativeLayout>

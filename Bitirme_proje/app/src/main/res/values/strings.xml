@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Veritabani İşlemleri</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_form">Öğrenci İşlemleri</string>
+    <string name="title_activity_personel">Personel İşlemleri</string>
+    <string name="title_activity_aracislemleri">Araç İşlemleri</string>
+</resources>
