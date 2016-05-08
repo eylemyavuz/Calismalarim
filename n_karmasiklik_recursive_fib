@@ -1,0 +1,14 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+double dizi[1000];
+double fib(int n){
+    if (n <= 1){
+        return n;
+        }
+    if (dizi[n] != -1){
+        return dizi[n];
+        }
+    dizi[n] = fib(n -1) + fib(n-2);
+    return dizi[n];
+}
