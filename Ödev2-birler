@@ -1,0 +1,83 @@
+#include <string>
+#include <string.h>
+#include <fstream>
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main(){
+ifstream input;
+ofstream output;
+dosya.open("dosya.txt");
+int str;
+int row=10,col=10;
+int dizi[row][col];
+int count=0,indis1=0,indis2=0,indis3=0,indis4=0,indis5=0;
+int indis6=0,indis7=0,indis8=0,indis9=0,indis10=0;
+while(! dosya.eof())
+{
+dosya>>str;
+if(str==2){count++;}
+else{if(count==0){
+dizi[0][indis1]=str;
+indis1++;
+}else if(count==1){
+dizi[1][indis2]=str;
+indis2++;
+}else if(count==2){
+dizi[2][indis3]=str;
+indis3++;}
+else if(count==3){
+dizi[3][indis4]=str;
+indis4++;}
+else if(count==4){
+dizi[4][indis5]=str;
+indis5++;}
+else if(count==5){
+dizi[5][indis6]=str;
+indis6++;}
+else if(count==6){
+dizi[6][indis7]=str;
+indis7++;}
+else if(count==7){
+dizi[7][indis8]=str;
+indis8++;}
+else if(count==8){
+dizi[8][indis9]=str;
+indis9++;}
+else if(count==9){
+dizi[9][indis10]=str;
+indis10++;
+}
+}
+}
+if(dosya.eof()){ break;}
+dosya.close();
+for(int i=0;i<row;i++) {
+for(int j=0;j<col;j++){
+cout<<dizi[i][j]<<" ";
+} cout<<"\n\n";
+}
+int eslesen=0;
+int sayac1=0,sayac2=0,sayac3=0,sayac4=0;
+for(int i=0;i<row;i++){
+sayac1=0; sayac2=0;
+for(int k=0;k<col;k++){
+if(dizi[i][k]==1){
+sayac1++;
+}
+else{ if(sayac1>sayac2){
+sayac2=sayac1;
+}
+sayac1=0;
+}
+if(sayac1>sayac2){
+sayac2=sayac1;
+}
+}
+if(sayac2>sayac3){
+sayac3=sayac2;
+eslesen=i; }
+cout<<i<<".satirda "<<sayac2<<" tane"<<endl;
+}
+cout<<"en fazla "<<eslesen<<" .satirda "<<sayac3<<" tane"<<endl;
+return 0; }
