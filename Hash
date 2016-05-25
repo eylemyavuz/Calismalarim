@@ -1,0 +1,206 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hash
+{
+    class hash
+    {
+
+        List<Object>[] dizi;
+        int kapasite; 
+
+        public hash(int size) {
+
+            this.dizi = new List<object>[size];
+
+            for(int i = 0; i < size; i++)
+            {
+                this.dizi[i] = null;
+            }
+            this.kapasite = size;
+
+        }
+
+        public void hash_yeniden_boyutlandir()
+        {
+            List<Object>[] yenidizi=new List<object>[this.dizi.Length];
+
+            
+           int yeni_boyut = this.dizi.Length*2;
+           yenidizi = new List<object>[yeni_boyut];
+           for (int k = 0; k<yeni_boyut; k++)
+           {
+               yenidizi[k] = null;
+           }
+            
+
+            int i = 0;
+            foreach(List<object> deger in this.dizi)
+            {
+                yenidizi[i] = deger;
+                i++;
+            }
+            this.dizi = yenidizi;
+        }
+
+        public void hash_yaz()
+        {
+           for(int i = 0; i < this.dizi.Length; i++)
+            {
+
+                if (this.dizi[i] == null) Console.WriteLine("|   Boş    |");
+
+                else
+                {
+                    foreach( object obj in dizi[i])
+                    {
+                        Console.Write("|  {0}  |",obj);
+
+                    }
+
+                    Console.WriteLine();
+
+                }
+            } 
+
+        }
+
+        public int  hashfonksiyonu(object x)
+        {
+
+            Type type = x.GetType();
+            if (type == typeof(string))
+            {
+                int toplam = 0;
+                foreach(char i in x.ToString())
+                {
+                    toplam += i;
+                }
+                return toplam % this.dizi.Length;
+            }
+            else if (type == typeof(int))
+            {
+                return Convert.ToInt32(x)% this.dizi.Length;
+            }
+
+            else
+            {
+                return -1;
+            }
+            
+        }
+
+        public void haste_ara( object aranacak)
+        {
+
+            Type type = aranacak.GetType();
+            if (type == typeof(string) || type == typeof(int))
+            {
+
+                int aranan_index = this.hashfonksiyonu(aranacak);
+
+                if (this.dizi[aranan_index] == null)
+                {
+                    Console.WriteLine("Aranan Eleman Bulunamadı");
+                }
+
+                else
+                {
+                    Console.Write("Aranan eleman dizinin {0} . elemandaki liste içerisinde ve",aranan_index);
+                    int sayac=1;
+                    foreach(object i in this.dizi[aranan_index])
+                    {
+                        if (i == aranacak)
+                        {
+                            Console.WriteLine("listedeki sırası {0}",sayac);
+
+                            break;
+                        }
+                        sayac++;
+                    }
+
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Aranacak Tip tanısız");
+            }
+
+       }
+
+        public bool hash_dolumu()
+        {
+            for(int i=0; i < this.kapasite; i++)
+            {
+                if (this.dizi[i] == null)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+
+        }
+
+        public void hashe_Ekle(object eklenecek_eleman)
+        {
+            Type type = eklenecek_eleman.GetType();
+            if (type == typeof(string) || type == typeof(int))
+            {
+                if (this.hash_dolumu())
+                {
+                    this.hash_yeniden_boyutlandir();
+
+                }
+
+                int eklenecegi_index = this.hashfonksiyonu(eklenecek_eleman);
+
+                if (this.dizi[eklenecegi_index] == null)
+                {
+                    List<object> yeni_liste = new List<object>();
+                    yeni_liste.Add(eklenecek_eleman);
+                    this.dizi[eklenecegi_index] = yeni_liste;
+                }
+
+                else
+                {
+                    this.dizi[eklenecegi_index].Add(eklenecek_eleman);
+                }
+                
+            }
+
+            else
+            {
+                Console.WriteLine("Hashe sadece string veya integer eklenebilir ...Ekleme işleminiz gecersiz....");
+                
+            }
+
+        }
+    }
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+           
+
+            Console.WriteLine("Hash tablosunun boyutunu giriniz...");
+            int boyut = Convert.ToInt32(Console.ReadLine());
+            hash yeni_hash = new hash(boyut);
+            yeni_hash.hashe_Ekle(10);
+            yeni_hash.hashe_Ekle(20);
+            yeni_hash.hashe_Ekle(30);
+            yeni_hash.hashe_Ekle("40");
+            yeni_hash.hashe_Ekle("50");
+            yeni_hash.hash_yaz();
+            Console.ReadKey();
+
+        }
+    }
+}
